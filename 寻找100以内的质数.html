@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 寻找100以内的指数
+        outer: for(i=1;i<=100;i++) {
+            for(j=2;j<i;j++){
+                if(i%j==0){
+                    // 此时找到除了1和他自身以外另一个约数，测试下一个数字
+                    // continue表示放弃这一个数字，开始下一次数字，负责的是他所在的最内层的循环
+                    // 要给外层循环加上lable，在continue的后面加上这个lable
+                    // 这样表示立即开始迭代外层for循环的下一个数字，而不是内层for循环
+                    continue outer
+                }
+            }
+            console.log(i);
+        }
+    </script>
+</body>
+</html>
