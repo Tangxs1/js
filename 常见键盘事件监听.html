@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    姓名：
+    <input type="text" id="name">
+    <script>
+        var oName = document.getElementById('name');
+        // onkeydown优先级高于onkeypress
+        oName.onkeydown = function () {
+            console.log('onkeydown');
+        }
+        // 功能键和箭头不会触发onkeypress
+        oName.onkeypress = function () {
+            console.log('onkeypress');
+        }
+        oName.onkeyup = function () {
+            console.log('onkeyup');
+        }
+    </script>
+</body>
+</html>

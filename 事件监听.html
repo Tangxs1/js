@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HTML事件</title>
+    <style>
+        .btn{
+            width:140px;
+            height:30px;
+            line-height: 30px;
+            font-size:14px;
+            text-align: center;
+            background-color: #7d83ff;
+            color:#fff;
+            border-radius: 5px;
+            margin-top:30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!--onclick:鼠标滑过时触发-->
+    <input type="button " value="弹 出"  onclick=" alert('我是一个按钮')">
+    <!--onmouseover:鼠标滑过调用onmouseover函数-->   <!--onmouseout :鼠标离开时触发-->
+    <div id="btn" class="btn" onmouseover="mouseoverFn(this,'#f00')" onmouseout="mouseoutFn(this,'#0f0')">
+        开始</div>
+    <div id="btn" class="btn" onmouseover="mouseoverFn(this,'pink')" onmouseout="mouseoutFn(this,'#ff0')">
+        结束</div>
+<script>
+    //传参   onmouseover="mouseoverFn(this,'#0f0')" 给  mouseoverFn(btn,bgColor)传参
+    function mouseoverFn(btn,bgColor){
+        //鼠标滑过，背景变为红色
+        btn.style.background=bgColor ;
+    }
+    //传参   onmouseout="mouseoutFn(this,'#0f0')" 给  mouseoutFn(btn,bgColor)传参
+    function mouseoutFn(btn,bgColor){
+        //鼠标滑过，背景变为#00f
+        btn.style.background=bgColor;
+    }
+</script>
+</body>
+</html>
